@@ -1,0 +1,13 @@
+demo-palmaconf:
+  autoredeploy: true
+  environment:
+    - ENV_NAME=production
+  image: 'asarzina/demo-palmaconf:latest'
+  links:
+    - mongo
+  ports:
+    - '80:3000'
+mongo:
+  image: 'mongo:3.2'
+  ports:
+    - '27017:27017'
